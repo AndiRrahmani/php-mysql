@@ -43,6 +43,25 @@ switch($day){
 
 }
 
+$x=50;
+
+for($x=50; $x<=100; $x+=2){
+    echo "$x <br>";
+}
+
+$students = array("Andi","Nili","Anik","Bled");
+
+foreach($students as $x){
+    echo "$x <br>";
+}
+
+$string = 'Nili';
+
+while(strlen($string) <10){
+    echo ($string);
+    $string=$string.'i';
+}
+
 
 
 
