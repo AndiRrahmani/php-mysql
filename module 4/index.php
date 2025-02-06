@@ -51,6 +51,49 @@ echo "<br>";
 
 phpversion();
 
+echo "<br>";
+
+
+$student= ["andi", "anik", "eden", "nili"];
+array_push($student, "daris");
+print_r ($student);
+
+$count= count($student);
+
+for($i=0; $i<$count; $i++){
+    echo "<br>". $student[$i];
+}
+
+echo "<br>";
+
+array_pop($student);
+print_r($student);
+
+echo "<br>";
+
+ array_unshift($student, "erjon");
+ print_r($student);
+ echo "<br>";
+
+ array_shift($student);
+ print_r($student);
+ echo "<br>";
+
+ $student_slice = array_slice($student, 1,1);
+ print_r($student_slice);
+
+
+echo "<br>";
+
+ $mosha= [15,14,13,15,16,14,15];
+ $shuma= array_sum($mosha);
+ $count= count($mosha);
+.
+
+print_r($shuma / $count );
+
+
+
 
 
 
