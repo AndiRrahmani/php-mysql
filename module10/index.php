@@ -9,10 +9,10 @@
 
 <form action="add.php" method="POST">
 
-<label for="name">Name:</label>
-<input type="text" id="name" name="name" placeholder="Name"><br>
-<label for="surname">Username:</label>
-<input type="username" id="username" name="username" placeholder="Username"><br>
+<label for="username">Userame:</label>
+<input type="text" id="username" name="username" placeholder="Userame"><br>
+<label for="surname">Surname:</label>
+<input type="surname" id="surname" name="surname" placeholder="Surname"><br>
 <label for="email">Email:</label>
 <input type="email" id="email" name="email" placeholder="Email"><br>
 <button type="submit" name="submit">Add</button>
