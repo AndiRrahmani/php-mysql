@@ -12,6 +12,7 @@ $prep = $conn->prepare($sql);
 $prep->bindParam(':id' , $id);
 
 $prep->execute();
+$data = $prep->fetch();
 
 
 
@@ -44,7 +45,7 @@ $prep->execute();
     
 </style>
     
-<from action="" method="POST">
+<form action="update.php" method="POST">
     <input type="hidden" name="id" value="<?php echo $data['id']?>"><br>
     <input type="text" name="name" value="<?php echo $data['name']?>"><br>
     <input type="text" name="surname" value="<?php echo $data['surname']?>"><br>
@@ -54,7 +55,7 @@ $prep->execute();
     <br><br>
     <button type="submit" name="update">Update</button>
 
-</from>
+</form>
 
 <a href="dashboard.php">Dashboard</a>
 </body>

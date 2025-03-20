@@ -29,6 +29,7 @@
             <th>Surname</th>
             <th>Email</th>
             <th>Age</th>
+            <th>Edit</th>
         </thead>
         <tbody>
             <?php
@@ -40,6 +41,7 @@
                     <td><?= $user['surname']?></td>
                     <td><?= $user['email']?></td>
                     <td><?= $user['age']?></td>
+                    <td><?="<a href='edit.php?id=$user[id]'>Edit User</a>"?></td>
                 </tr>
                 <?php
             }

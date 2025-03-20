@@ -12,5 +12,17 @@ if(isset($_POST['update']))
 
 }
 
+    var_dump($name);
+    $sql= "UPDATE users SET name=:name, surname=:surname, email=:email, age=:age WHERE id=:id";
+
+    $sqlQuery = $conn->prepare($sql);
+
+    $sqlQuery->bindParam(':name',$name);
+    $sqlQuery->bindParam(':surname',$surname);
+    $sqlQuery->bindParam(':email',$email);
+    $sqlQuery->bindParam(':age',$age);
+    $sqlQuery->bindParam(':id',$id);
+
+    $sqlQuery->execute();
 
 ?>
