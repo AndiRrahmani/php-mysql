@@ -41,7 +41,7 @@
                     <td><?= $user['surname']?></td>
                     <td><?= $user['email']?></td>
                     <td><?= $user['age']?></td>
-                    <td><?="<a href='edit.php?id=$user[id]'>Edit User</a>"?></td>
+                    <td><?="<a href='delete.php?id=$user[id]'> Delete</a> | <a href='edit.php?id=$user[id]'>Edit User</a>"?></td>
                 </tr>
                 <?php
             }
