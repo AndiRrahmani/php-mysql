@@ -1,7 +1,7 @@
 <?php
 
 $localhost = 'localhost';
-$dbname = 'db';
+$dbname = 'mms';
 $user = 'root';
 $password ='';
 
