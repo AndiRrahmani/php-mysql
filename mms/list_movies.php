@@ -14,7 +14,7 @@
           header("Location: login.php");
     }
    
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM movies";
     $selectUsers = $conn->prepare($sql);
     $selectUsers->execute();
 
@@ -124,9 +124,9 @@
           <thead>
             <tr>
               <th scope="col">Id</th>
-              <th scope="col">Emri</th>
-              <th scope="col">Username</th>
-              <th scope="col">Email</th>
+              <th scope="col">Movie Name </th>
+              <th scope="col">Movie Description</th>
+              <th scope="col">Movie Quality</th>
               <th scope="col">Update</th>
               <th scope="col">Delete</th>
             </tr>
@@ -137,13 +137,13 @@
 
                <tr>
                 <td><?php echo $user_data['id']; ?></td>
-                <td><?php echo $user_data['emri']; ?></td>
-                <td><?php echo $user_data['username']; ?></td>
-                <td><?php echo $user_data['email']; ?></td>
+                <td><?php echo $user_data['movie_name']; ?></td>
+                <td><?php echo $user_data['movie_desc']; ?></td>
+                <td><?php echo $user_data['movie_quality']; ?></td>
                 <!-- If we want to update a user we need to link into editUsers.php -->
-                <td><a href="editUsers.php?id=<?= $user_data['id'];?>">Update</a></td>
+                <td><a href="edit.php?id=<?= $user_data['id'];?>">Update</a></td>
                   <!-- If we want to delete a user we need to link into deleteUsers.php -->
-                <td><a href="deleteUsers.php?id=<?= $user_data['id'];?>">Delete</a></td>
+                <td><a href="delete.php?id=<?= $user_data['id'];?>">Delete</a></td>
               </tr>
               
            <?php  } ?>
@@ -169,91 +169,3 @@
 
  </body>
  </html>
-
-    <div class="container-fluid">
-  <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-
-
-        <li class="nav-item">
-              <a class="nav-link" href="home.php">
-                <span data-feather="file"></span>
-                Home
-              </a>
-            </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.php">
-              <span data-feather="home"></span>
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="list_movies.php">
-              <span data-feather="file"></span>
-              Movies
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="bookings.php">
-              <span ></span>
-              Bookings
-            </a>
-          </li>
-        </ul>
-
-
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        
-      </div>
-
-      <h2>Users</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Emri</th>
-              <th scope="col">Username</th>
-              <th scope="col">Email</th>
-              <th scope="col">Update</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-          <?php foreach($users_data as $user_data){?>
-                <tr>
-                    <td><?php echo $user_data['id']?></td>
-                    <td><?php echo $user_data['emri']?></td>
-                    <td><?php echo $user_data['username']?></td>
-                    <td><?php echo $user_data['email']?></td>
-                    <td><a href="editUsers.php?id=<?= $user_data['id'];?>">Update</a></td>
-                    <td><a href="deleteUsers.php?id=<?= $user_data['id'];?>">Delete</a></td>
-                </tr>
-
-
-          <?php  } ?>
-           
-            
-           </tbody>
-         </table>
-       </div>
-      <?php  } else {
-       
-     } ?>
-     </main>
-   </div>
- </div>
-       
-           <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-       
-             <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
-         </body>
-       </html>
-       
-       
-        </body>
-        </html>
