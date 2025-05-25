@@ -1,18 +1,15 @@
 <?php
+//Initialization of some variables for maintaining database data
+$user="root";
+$pass="";
+$server="localhost";
+$dbname="dealership";
 
-$localhost = 'localhost';
-$dbname = 'dealership';
-$user = 'root';
-$password ='';
-
-
-try{
-    $conn = new PDO("mysql:host=$localhost; dbname=$dbname", $profili, $password);
-    echo "Connection Sucssesfull";
-} catch(PDOException $e){
-    echo "Error" .$e->getMessage() ;
+try {
+	//Creating a PDO to connect with database
+	$conn =new PDO("mysql:host=$server;dbname=$dbname",$user,$pass);
+} catch (PDOException $e) {
+	echo "error: " . $e->getMessage();
 }
-
-
 
 ?>
