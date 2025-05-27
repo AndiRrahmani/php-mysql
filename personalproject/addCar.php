@@ -7,27 +7,25 @@
 	if(isset($_POST['submit']))
 	{
 
-		$movie_name = $_POST['movie_name'];
-		$movie_desc = $_POST['movie_desc'];
-		$movie_quality = $_POST['movie_quality'];
-		$movie_rating = $_POST['movie_rating'];
-		$movie_image = $_POST['movie_image'];
+		$movie_name = $_POST['car_name'];
+		$movie_desc = $_POST['car_desc'];
+		$movie_quality = $_POST['car_price'];
+		$movie_image = $_POST['car_image'];
 	
 
-		$sql = "INSERT INTO movies(movie_name, movie_desc, movie_quality, movie_rating, movie_image) VALUES (:movie_name, :movie_desc, :movie_quality, :movie_rating, :movie_image)";
+		$sql = "INSERT INTO movies(car_name, car_desc, car_price, car_image) VALUES (:car_name, :car_desc, :car_price, :car_image)";
 
 		$insertMovie = $conn->prepare($sql);
 			
 
-		$insertMovie->bindParam(':movie_name', $movie_name);
-		$insertMovie->bindParam(':movie_desc', $movie_desc);
-		$insertMovie->bindParam(':movie_quality', $movie_quality);
-		$insertMovie->bindParam(':movie_rating', $movie_rating);
-		$insertMovie->bindParam(':movie_image', $movie_image);
+		$insertMovie->bindParam(':movie_name', $car_name);
+		$insertMovie->bindParam(':movie_desc', $car_desc);
+		$insertMovie->bindParam(':movie_quality', $car_price);
+		$insertMovie->bindParam(':movie_image', $car_image);
 
 		$insertMovie->execute();
 
-		header("Location: movies.php");
+		header("Location: cars.php");
 
 
 	}
