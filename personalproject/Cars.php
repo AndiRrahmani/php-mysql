@@ -65,16 +65,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="list_movies.php">
+            <a class="nav-link" href="list_cars.php">
               <span data-feather="file"></span>
-              Movies
+              Cars
             </a>
           </li>
         <?php } ?>
           <li class="nav-item">
-            <a class="nav-link" href="bookings.php">
+            <a class="nav-link" href="purchases.php">
               <span ></span>
-              Bookings
+              Purchases
             </a>
           </li>
         </ul>
@@ -91,32 +91,28 @@
 
     
 
-      <h2>Movies</h2>
+      <h2>Cars</h2>
 
        <form action="addMovie.php" method="post">
     
         
         <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Movie Name" name="movie_name" >
-          <label for="floatingInput">Movie name</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Car Name" name="car_name" >
+          <label for="floatingInput">Car name</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Movie Description" name="movie_desc" >
-          <label for="floatingInput">Movie Description</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Car Description" name="car_desc" >
+          <label for="floatingInput">Car Description</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Quality" name="movie_quality" >
-          <label for="floatingInput">Movie Quality</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Price" name="car_price" >
+          <label for="floatingInput">Car Price</label>
         </div>
         <div class="form-floating">
-          <input type="number" class="form-control" id="floatingInput" placeholder="Rating" name="movie_rating" >
-          <label for="floatingInput">Rating</label>
-        </div>
-        <div class="form-floating">
-          <input type="file" class="form-control" id="floatingInput" placeholder="Image" name="movie_image" >
+          <input type="file" class="form-control" id="floatingInput" placeholder="Image" name="car_image" >
           <label for="floatingInput">Image</label>
         </div>
-         <button  class="w-100 btn btn-lg btn-primary" type="submit" name="submit"> Add Movie </button> 
+         <button  class="w-100 btn btn-lg btn-primary" type="submit" name="submit"> Add Car </button> 
       </form>
       
       </div>

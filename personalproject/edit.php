@@ -9,7 +9,7 @@
 
    $id = $_GET['id'];
 
-   $sql = "SELECT * FROM movies WHERE id=:id";
+   $sql = "SELECT * FROM cars WHERE id=:id";
    $selectUser = $conn->prepare($sql);
    $selectUser->bindParam(':id', $id);
    $selectUser->execute();
@@ -86,7 +86,7 @@
 
     
 
-      <h2>Edit movie's details</h2>
+      <h2>Edit car's details</h2>
       <div class="table-responsive">
         
         <form action="update.php" method="post">
@@ -96,20 +96,16 @@
         </div>
     
         <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="movie_name" name="movie_name" value="<?php echo  $user_data['movie_name'] ?>">
-          <label for="floatingInput">Movie Name</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Car Name" name="car_name" value="<?php echo  $user_data['car_name'] ?>">
+          <label for="floatingInput">Car Name</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Movie Description" name="movie_desc" value="<?php echo  $user_data['movie_desc'] ?>">
-          <label for="floatingInput">Movie Description</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Car Description" name="car_desc" value="<?php echo  $user_data['car_desc'] ?>">
+          <label for="floatingInput">Car Description</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Movie Quality" name="movie_quality" value="<?php echo  $user_data['movie_quality'] ?>">
-          <label for="floatingInput">Movie Quality</label>
-        </div>
-        <div class="form-floating">
-          <input type="number" class="form-control" id="floatingInput" placeholder="Movie Rating" name="movie_rating" value="<?php echo  $user_data['movie_rating'] ?>">
-          <label for="floatingInput">Movie Rating</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Car Price" name="car_price" value="<?php echo  $user_data['car_price'] ?>">
+          <label for="floatingInput">Car Price</label>
         </div>
         <br>
         <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit1">Update</button>

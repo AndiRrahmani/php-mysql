@@ -6,7 +6,7 @@
 	
    include_once('config.php');
 
-   $sql = "SELECT * FROM movies";
+   $sql = "SELECT * FROM cars";
    $selectMovies = $conn->prepare($sql);
    $selectMovies->execute();
    $movies_data = $selectMovies->fetchAll();
@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4 class="text-white">About</h4>
-          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+          <p class="text-muted">Add some information about the car, the car brand, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
@@ -69,7 +69,7 @@
  	<section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Album example</h1>
+        <h1 class="fw-light">Car example</h1>
         <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Main call to action</a>
@@ -84,23 +84,22 @@
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-      	<?php foreach ($movies_data as $movie_data) { ?>
+      	<?php foreach ($cars_data as $car_data) { ?>
 
       	<div class="col">
           <div class="card shadow-sm">
 
-            <img src="movie_images/<?php echo $movie_data['movie_image'];  ?>" height="350">
+            <img src="movie_images/<?php echo $car_data['car_image'];  ?>" height="350">
 
             <div class="card-body">
-              <h4><?php echo $movie_data['movie_name']; ?></h4>
-              <p class="card-text"><?php echo $movie_data['movie_desc']; ?></p>
+              <h4><?php echo $car_data['car_name']; ?></h4>
+              <p class="card-text"><?php echo $car_data['car_desc']; ?></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="details.php?id=<?php echo $movie_data['id']; ?>"  class="btn btn-sm btn-outline-secondary" >View</a>
-                  <a href="edit.php?id=<?php echo $movie_data['id']; ?>"  class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a href="details.php?id=<?php echo $car_data['id']; ?>"  class="btn btn-sm btn-outline-secondary" >View</a>
+                  <a href="edit.php?id=<?php echo $car_data['id']; ?>"  class="btn btn-sm btn-outline-secondary">Edit</a>
                 </div>
-                <small class="text-muted">Rating: <?php echo $movie_data['movie_rating']; ?></small>
-                <small class="text-muted"><?php echo $movie_data['movie_quality']; ?></small>
+                <small class="text-muted">Car Price: <?php echo $car_data['car_price']; ?></small>
               </div>
             </div>
           </div>

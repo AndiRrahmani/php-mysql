@@ -12,7 +12,7 @@
           header("Location: login.php");
     }
    
-    $sql = "SELECT * FROM movies";
+    $sql = "SELECT * FROM cars";
     $selectUsers = $conn->prepare($sql);
     $selectUsers->execute();
 
@@ -74,16 +74,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="list_movies.php">
+            <a class="nav-link" href="list_cars.php">
               <span data-feather="file"></span>
-              Movies
+              Cars
             </a>
           </li>
         <?php } ?>
           <li class="nav-item">
-            <a class="nav-link" href="bookings.php">
+            <a class="nav-link" href="purchases.php">
               <span ></span>
-              Bookings
+              Purchases
             </a>
           </li>
         </ul>
@@ -100,8 +100,8 @@
 
     <?php if ($_SESSION['is_admin'] == 'true') { ?>
 
-      <h2>Movies</h2>
-      <a href="movies.php" class="btn btn-primary">Add Movie</a>
+      <h2>Cars</h2>
+      <a href="movies.php" class="btn btn-primary">Add Car</a>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -119,9 +119,9 @@
 
                <tr>
                 <td><?php echo $user_data['id']; ?></td>
-                <td><?php echo $user_data['movie_name']; ?></td>
-                <td><?php echo $user_data['movie_desc']; ?></td>
-                <td><?php echo $user_data['movie_quality']; ?></td>
+                <td><?php echo $user_data['car_name']; ?></td>
+                <td><?php echo $user_data['car_desc']; ?></td>
+                <td><?php echo $user_data['car_price']; ?></td>
                 <!-- If we want to update a movie we created a link which will link us in edit.php file: -->
                 <td><a href="edit.php?id=<?= $user_data['id'];?>">Update</a></td>
                 <!-- If we want to Delete a movie we created a link which will link us in delete.php file -->

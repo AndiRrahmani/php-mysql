@@ -20,20 +20,20 @@ If the user is admin we will fetch some datas from database and show them,
 */
    if ($_SESSION['is_admin'] == 'true') {
 
-     $sql = "SELECT movies.movie_name, users.email,bookings.id, bookings.nr_tickets, bookings.date, bookings.is_approved, bookings.time FROM movies
-     INNER JOIN bookings ON movies.id = bookings.movie_id
-     INNER JOIN users ON users.id = bookings.user_id";
+     $sql = "SELECT cars.car_name, users.email,purchases.id, purchases.date, purchases.is_approved, purchases.time FROM cars
+     INNER JOIN purchases ON cars.id = purchases.car_id
+     INNER JOIN users ON users.id = purchases.user_id";
             
 
-    $selectBookings = $conn->prepare($sql);
-    $selectBookings->execute();
+    $selectPurchases = $conn->prepare($sql);
+    $selectPurchases->execute();
 
-    $bookings_data = $selectBookings->fetchAll();
+    $purchases_data = $selectPurchases->fetchAll();
    }else {
     
-      $sql = "SELECT movies.movie_name, users.email, bookings.nr_tickets, bookings.date,bookings.is_approved, bookings.time
-            FROM movies INNER JOIN bookings ON movies.id = bookings.movie_id 
-            INNER JOIN users ON users.id = bookings.user_id WHERE bookings.user_id = :user_id";
+      $sql = "SELECT cars.car_name, users.email, purchases.date,purchases.is_approved, purchases.time
+            FROM cars INNER JOIN purchases ON cars.id = purchases.car_id 
+            INNER JOIN users ON users.id = purchases.user_id WHERE purchases.user_id = :user_id";
 
     $selectBookings = $conn->prepare($sql);
     $selectBookings->bindParam(':user_id',$user_id);
@@ -96,16 +96,16 @@ If the user is admin we will fetch some datas from database and show them,
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="list_movies.php">
+            <a class="nav-link" href="list_cars.php">
               <span data-feather="file"></span>
-              Movies
+              Cars
             </a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="bookings.php">
+            <a class="nav-link" href="purchases.php">
               <span ></span>
-              Bookings
+              Purchases
             </a>
           </li>
         
@@ -117,9 +117,9 @@ If the user is admin we will fetch some datas from database and show them,
               </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="bookings.php">
+            <a class="nav-link" href="purchases.php">
               <span ></span>
-              Bookings
+              Purchases
             </a>
           </li>
           
@@ -138,15 +138,14 @@ If the user is admin we will fetch some datas from database and show them,
 
     
 
-      <h2>Movie Bookings</h2>
+      <h2>Car Purchases</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
         
-              <th scope="col">Movie Name</th>
+              <th scope="col">Car Name</th>
               <th scope="col">User Email</th>
-              <th scope="col">Number of tickets</th>
               <th scope="col">Date</th>
               <th scope="col">Time</th>
               <th scope="col">Approved</th>
@@ -155,29 +154,27 @@ If the user is admin we will fetch some datas from database and show them,
           </thead>
           <tbody>
           <?php if ($_SESSION['is_admin'] == 'true') { ?>
-            <?php foreach ($bookings_data as $booking_data) { ?>
+            <?php foreach ($purchases_data as $purchase_data) { ?>
                 
                <tr>
-                <td><?php echo $booking_data['movie_name']; ?></td>
-                <td><?php echo $booking_data['email']; ?></td>
-                <td><?php echo $booking_data['nr_tickets']; ?></td>
-                <td><?php echo $booking_data['date']; ?></td>
-                <td><?php echo $booking_data['time']; ?></td>
-                <td ><?php echo $booking_data['is_approved']; ?></td>
+                <td><?php echo $purchase_data['car_name']; ?></td>
+                <td><?php echo $purchase_data['email']; ?></td>
+                <td><?php echo $purchase_data['date']; ?></td>
+                <td><?php echo $purchase_data['time']; ?></td>
+                <td ><?php echo $purchase_data['is_approved']; ?></td>
 
-                <td><a href="approve.php?id=<?= $booking_data['id'];?>">Approve</a></td>
-                <td><a href="decline.php?id=<?= $booking_data['id'];?>">Decline</a></td>
+                <td><a href="approve.php?id=<?= $purchase_data['id'];?>">Approve</a></td>
+                <td><a href="decline.php?id=<?= $purchase_data['id'];?>">Decline</a></td>
               </tr>
               
            <?php }}else{ ?>
-            <?php foreach ($bookings_data as $booking_data) { ?>
+            <?php foreach ($purchases_data as $purchase_data) { ?>
             <tr>
-            <td><?php echo $booking_data['movie_name']; ?></td>
-            <td><?php echo $booking_data['email']; ?></td>
-            <td><?php echo $booking_data['nr_tickets']; ?></td>
-            <td><?php echo $booking_data['date']; ?></td>
-            <td><?php echo $booking_data['time']; ?></td>
-            <td ><?php echo $booking_data['is_approved']; ?></td>
+            <td><?php echo $purchase_data['movie_name']; ?></td>
+            <td><?php echo $purchase_data['email']; ?></td>
+            <td><?php echo $purchase_data['date']; ?></td>
+            <td><?php echo $purchase_data['time']; ?></td>
+            <td ><?php echo $purchase_data['is_approved']; ?></td>
            </tr>
             
            <?php } ?>

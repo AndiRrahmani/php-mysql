@@ -47,12 +47,12 @@
 
     .sidebar {
       width: 250px;
-      background-color:rgb(15, 182, 85);
+      background-color:rgb(0, 0, 0);
       color: #ecf0f1;
       padding: 20px 0;
       position: fixed;
       height: 100%;
-      box-shadow: 2px 0 5px rgb(15, 182, 85);
+      box-shadow: 2px 0 5px rgb(0, 0, 0);
     }
 
     .sidebar h2 {
@@ -73,7 +73,7 @@
     }
 
     .sidebar a:hover {
-      background-color:rgb(15, 182, 85);
+      background-color:rgb(0, 0, 0);
     }
 
     .main-content {
@@ -102,7 +102,7 @@
       background-color: #fff;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgb(15, 182, 85);
+      box-shadow: 0 2px 4px rgb(0, 0, 0);
       flex: 1;
       min-width: 250px;
       text-align: center;
@@ -123,7 +123,7 @@
       background-color: #fff;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgb(15, 182, 85);
+      box-shadow: 0 2px 4px rgb(0, 0, 0);
     }
 
     table {
@@ -137,7 +137,7 @@
     }
 
     th {
-      background-color:rgb(15, 182, 85);
+      background-color:rgb(0, 0, 0);
       color: white;
     }
 
@@ -158,9 +158,9 @@
 </head>
 <body>
   <div class="sidebar">
-    <h2>SupportersSeat</h2>
+    <h2>Buyers</h2>
     <a href="dashboard.php">Dashboard</a>
-    <a href="matches.php">Matches</a>
+    <a href="cars.php">Cars</a>
 
     <a href="logout.php">Logout</a>
   </div>
@@ -170,16 +170,16 @@
 
     <div class="dashboard-widgets">
       <div class="widget">
-        <h3>Total Users</h3>
-        <p>142</p>
+        <h3>Total Clients</h3>
+        <p>128</p>
       </div>
       <div class="widget">
         <h3>New Signups</h3>
-        <p>34 today</p>
+        <p>12 today</p>
       </div>
       <div class="widget">
         <h3>Revenue</h3>
-        <p>$7000</p>
+        <p>$157000</p>
       </div>
     </div>
 
