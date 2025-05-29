@@ -35,11 +35,11 @@ If the user is admin we will fetch some datas from database and show them,
             FROM cars INNER JOIN purchases ON cars.id = purchases.car_id 
             INNER JOIN users ON users.id = purchases.user_id WHERE purchases.user_id = :user_id";
 
-    $selectBookings = $conn->prepare($sql);
-    $selectBookings->bindParam(':user_id',$user_id);
-    $selectBookings->execute();
+    $selectPurchases = $conn->prepare($sql);
+    $selectPurchases->bindParam(':user_id',$user_id);
+    $selectPurchases->execute();
 
-    $bookings_data = $selectBookings->fetchAll();
+    $bookings_data = $selectPurchases->fetchAll();
 
    }
  ?>

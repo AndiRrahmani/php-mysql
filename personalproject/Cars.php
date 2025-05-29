@@ -93,7 +93,8 @@
 
       <h2>Cars</h2>
 
-       <form action="addMovie.php" method="post">
+       <form action="addcar.php" method="post">
+        
     
         
         <div class="form-floating">

@@ -17,14 +17,14 @@
 	//Inserting the new data into database
 	$sql = "INSERT INTO purchases(user_id, car_id,  date, time) VALUES (:user_id, :movie_id, :date, :time)";
 
-	$insertBooking = $conn->prepare($sql);
+	$insertPurchases = $conn->prepare($sql);
 
-	$insertBooking->bindParam(":user_id", $user_id);
-	$insertBooking->bindParam(":car_id", $movie_id);
-	$insertBooking->bindParam(":date", $date);
-	$insertBooking->bindParam(":time", $time);
+	$insertPurchases->bindParam(":user_id", $user_id);
+	$insertPurchases->bindParam(":car_id", $movie_id);
+	$insertPurchases->bindParam(":date", $date);
+	$insertPurchases->bindParam(":time", $time);
 
-	$insertBooking->execute();
+	$insertPurchases->execute();
 
 	header("Location: home.php");
 

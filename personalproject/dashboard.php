@@ -161,6 +161,7 @@
     <h2>Buyers</h2>
     <a href="dashboard.php">Dashboard</a>
     <a href="cars.php">Cars</a>
+    <a href="purchases.php">Purchases</a>
 
     <a href="logout.php">Logout</a>
   </div>
