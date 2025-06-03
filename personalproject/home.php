@@ -7,9 +7,9 @@
    include_once('config.php');
 
    $sql = "SELECT * FROM cars";
-   $selectMovies = $conn->prepare($sql);
-   $selectMovies->execute();
-   $movies_data = $selectMovies->fetchAll();
+   $selectcars = $conn->prepare($sql);
+   $selectcars->execute();
+   $cars_data = $selectcars->fetchAll();
 
 
 
@@ -89,7 +89,7 @@
       	<div class="col">
           <div class="card shadow-sm">
 
-            <img src="movie_images/<?php echo $car_data['car_image'];  ?>" height="350">
+            <img src="car_images/<?php echo $car_data['car_images'];  ?>" height="250">
 
             <div class="card-body">
               <h4><?php echo $car_data['car_name']; ?></h4>

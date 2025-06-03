@@ -159,6 +159,7 @@
 <body>
   <div class="sidebar">
     <h2>Buyers</h2>
+    <a href="home.php">Home</a>
     <a href="dashboard.php">Dashboard</a>
     <a href="cars.php">Cars</a>
     <a href="purchases.php">Purchases</a>

@@ -21,7 +21,7 @@ If the user is admin we will fetch some datas from database and show them,
    if ($_SESSION['is_admin'] == 'true') {
 
      $sql = "SELECT cars.car_name, users.email,purchases.id, purchases.date, purchases.is_approved, purchases.time FROM cars
-     INNER JOIN purchases ON cars.id = purchases.car_id
+     INNER JOIN purchase ON cars.id = purchases.car_id
      INNER JOIN users ON users.id = purchases.user_id";
             
 
@@ -39,7 +39,7 @@ If the user is admin we will fetch some datas from database and show them,
     $selectPurchases->bindParam(':user_id',$user_id);
     $selectPurchases->execute();
 
-    $bookings_data = $selectPurchases->fetchAll();
+    $purchases_data = $selectPurchases->fetchAll();
 
    }
  ?>
